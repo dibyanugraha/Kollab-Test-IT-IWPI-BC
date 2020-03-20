@@ -8,12 +8,16 @@
         <ConnectString />
       </ConnectionProperties>
       <rd:SecurityType>None</rd:SecurityType>
+<<<<<<< HEAD
       <rd:DataSourceID>81a172f6-6bc2-4c73-bc02-cc48f9b0f149</rd:DataSourceID>
+=======
+>>>>>>> 3e67e92d5ee64c5e717ea47340df875c67af1086
     </DataSource>
   </DataSources>
   <ReportSections>
     <ReportSection>
       <Body>
+<<<<<<< HEAD
         <ReportItems>
           <Tablix Name="Tablix1">
             <TablixBody>
@@ -686,6 +690,12 @@
         <Style />
       </Body>
       <Width>8in</Width>
+=======
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+>>>>>>> 3e67e92d5ee64c5e717ea47340df875c67af1086
       <Page>
         <Style />
       </Page>
@@ -745,12 +755,15 @@ End Function
         <Field Name="RemainingFormat">
           <DataField>RemainingFormat</DataField>
         </Field>
+<<<<<<< HEAD
         <Field Name="Remaining2">
           <DataField>Remaining2</DataField>
         </Field>
         <Field Name="Remaining2Format">
           <DataField>Remaining2Format</DataField>
         </Field>
+=======
+>>>>>>> 3e67e92d5ee64c5e717ea47340df875c67af1086
         <Field Name="Nama">
           <DataField>Nama</DataField>
         </Field>
@@ -760,9 +773,12 @@ End Function
         <Field Name="HP">
           <DataField>HP</DataField>
         </Field>
+<<<<<<< HEAD
         <Field Name="email">
           <DataField>email</DataField>
         </Field>
+=======
+>>>>>>> 3e67e92d5ee64c5e717ea47340df875c67af1086
       </Fields>
       <Query>
         <DataSourceName>DataSource</DataSourceName>
