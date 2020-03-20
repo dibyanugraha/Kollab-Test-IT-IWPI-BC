@@ -1,4 +1,4 @@
-report 50100 "Cust Ledger Entry"
+report 50100 "Cust Ledger E"
 {
     Caption = 'Cust Ledger Entry';
     UsageCategory = ReportsAndAnalysis;
