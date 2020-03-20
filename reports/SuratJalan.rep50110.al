@@ -22,19 +22,11 @@ report 50110 "iwpi_Surat Jalan"
             {
 
             }
-            column(Sell_to_Address; "Ship-to Address")
+            column(fullSellToAddress; fullSellToAddress)
             {
 
             }
-            column(Sell_to_Address_2; "Ship-to Address 2")
-            {
-
-            }
-            column(Ship_to_Address; "Ship-to Address")
-            {
-
-            }
-            column(Ship_to_Address_2; "Ship-to Address 2")
+            column(fullShipToAddress; fullShipToAddress)
             {
 
             }
@@ -58,18 +50,23 @@ report 50110 "iwpi_Surat Jalan"
             {
 
             }
+
+            column(sumQuantity; sumQuantity)
+            {
+
+            }
+
+            column(sumQuantityBase; sumQuantityBase)
+            {
+
+            }
             dataitem(SSL; "Sales Shipment Line")
             {
                 DataItemLinkReference = SSH;
                 DataItemLink =
                     "Document No." = field("No.");
 
-                column(Description; Description)
-                {
-
-                }
-
-                column(Description_2; "Description 2")
+                column(fullItemDescription; fullItemDescription)
                 {
 
                 }
@@ -90,16 +87,28 @@ report 50110 "iwpi_Surat Jalan"
 
                 trigger OnAfterGetRecord()
                 begin
-                    totalLines := totalLines + 1;
+                    totalLines += 1;
+                    fullItemDescription := Description + "Description 2";
+                    sumQuantity := sumQuantity + "Quantity";
+                    sumQuantityBase := sumQuantityBase + "Quantity (Base)";
                 end;
             }
             trigger OnAfterGetRecord()
             begin
                 totalLines := 0;
+                sumQuantity := 0;
+                sumQuantityBase := 0;
+                fullSellToAddress := "Sell-to Address" + "Sell-to Address 2";
+                fullShipToAddress := "Ship-to Address" + "Ship-to Address 2";
             end;
         }
     }
 
     var
         totalLines: Integer;
+        fullItemDescription: Text;
+        fullSellToAddress: Text;
+        fullShipToAddress: Text;
+        sumQuantity: Decimal;
+        sumQuantityBase: Decimal;
 }
