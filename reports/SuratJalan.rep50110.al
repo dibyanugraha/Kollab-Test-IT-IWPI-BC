@@ -3,11 +3,17 @@ report 50110 "iwpi_Surat Jalan"
     Caption = 'Surat Jalan';
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
+    DefaultLayout = Word;
+    WordLayout = '.\reports\SuratJalan.rep50110.docx';
 
     dataset
     {
         dataitem(SSH; "Sales Shipment Header")
         {
+            column(No_; "No.")
+            {
+
+            }
             column(Sell_to_Customer_Name; "Sell-to Customer Name")
             {
 
@@ -29,6 +35,14 @@ report 50110 "iwpi_Surat Jalan"
 
             }
             column(Ship_to_Address_2; "Ship-to Address 2")
+            {
+
+            }
+            column(Sell_to_City; "Sell-to City")
+            {
+
+            }
+            column(Sell_to_Post_Code; "Sell-to Post Code")
             {
 
             }
@@ -68,7 +82,24 @@ report 50110 "iwpi_Surat Jalan"
                 {
 
                 }
+
+                column(totalLines; totalLines)
+                {
+
+                }
+
+                trigger OnAfterGetRecord()
+                begin
+                    totalLines := totalLines + 1;
+                end;
             }
+            trigger OnAfterGetRecord()
+            begin
+                totalLines := 0;
+            end;
         }
     }
+
+    var
+        totalLines: Integer;
 }
