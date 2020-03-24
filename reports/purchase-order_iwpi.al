@@ -1,9 +1,9 @@
 report 50145 "Purchase - Order IWPI"
 {
-    RDLCLayout = './reports/purchase-order_iwpi.rdl';
-    // WordLayout = './StandardPurchaseOrder.docx';
-    Caption = 'Purchase - Order';
-    DefaultLayout = RDLC;
+    //RDLCLayout = './reports/purchase-order_iwpi.rdl';
+    WordLayout = './reports/purchase-order_iwpi.docx';
+    Caption = 'Purchase - Order IWPI';
+    DefaultLayout = Word;
     EnableHyperlinks = true;
     PreviewMode = PrintLayout;
     WordMergeDataItem = "Purchase Header";
@@ -1085,6 +1085,7 @@ report 50145 "Purchase - Order IWPI"
         ExpectedReceiptDateLbl: Label 'Expected Receipt Date';
         PlannedReceiptDateLbl: Label 'Planned Receipt Date';
         ItemNo: Text;
+        QuoteNo: Text;
 
     procedure InitializeRequest(LogInteractionParam: Boolean)
     begin
@@ -1116,6 +1117,7 @@ report 50145 "Purchase - Order IWPI"
             FormatDocument.SetPaymentTerms(PrepmtPaymentTerms, "Prepmt. Payment Terms Code", "Language Code");
             FormatDocument.SetShipmentMethod(ShipmentMethod, "Shipment Method Code", "Language Code");
 
+            QuoteNo := FormatDocument.SetText("Quote No." <> '', FieldCaption("Quote No."));
             ReferenceText := FormatDocument.SetText("Your Reference" <> '', FieldCaption("Your Reference"));
             VATNoText := FormatDocument.SetText("VAT Registration No." <> '', FieldCaption("VAT Registration No."));
         end;
