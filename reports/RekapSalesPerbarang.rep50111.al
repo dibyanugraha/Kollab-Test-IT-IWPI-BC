@@ -15,6 +15,10 @@ report 50111 "Rekap. Penjualan Per Barang"
             {
 
             }
+            column(qtyBase; qry50100.Quantity__Base_)
+            {
+
+            }
             trigger OnPreDataItem()
             begin
                 qry50100.SetRange(qry50100.Posting_Date_Filter, 0D, 0D);
@@ -34,8 +38,6 @@ report 50111 "Rekap. Penjualan Per Barang"
                 qry50100isFinish: Boolean;
                 qry50101isFinish: Boolean;
             begin
-                postingDate := qry50100.Posting_Date;
-
                 if not qry50100.Read() then
                     qry50100isFinish := true;
 
@@ -52,12 +54,4 @@ report 50111 "Rekap. Penjualan Per Barang"
         qry50100: Query "Rekap. Sales Cumul. Qty./Bulan";
         qry50101: Query "Rekap. Sales Cumul. Amt./Bulan";
         kodeBarang: Code[20];
-        postingDate: Date;
-        itemNo: Code[20];
-        qtyCumulStartMonth: Decimal;
-        qtyCumulEndMonth: Decimal;
-        qtyTotalMonth: Decimal;
-        priceCumulStartMonth: Decimal;
-        priceCumulEndMonth: Decimal;
-        priceTotalMonth: Decimal;
 }

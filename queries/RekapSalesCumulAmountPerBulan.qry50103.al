@@ -1,4 +1,4 @@
-query 50100 "Rekap. Sales Cumul. Qty./Bulan"
+query 50103 "Rekap. Sales Cumul. Amt./Bula"
 {
     QueryType = Normal;
 
@@ -14,7 +14,7 @@ query 50100 "Rekap. Sales Cumul. Qty./Bulan"
             {
 
             }
-            column(Quantity__Base_; "Quantity (Base)")
+            column(Line_Amount; "Line Amount")
             {
                 Method = Sum;
             }

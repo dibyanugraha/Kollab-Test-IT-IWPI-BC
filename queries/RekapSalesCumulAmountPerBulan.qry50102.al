@@ -1,4 +1,4 @@
-query 50102 "Rekap. Sales Cumul. Amt./Bulan"
+query 50101 "Rekap. Sales Cumul. Amt./Bulan"
 {
     QueryType = Normal;
 
@@ -7,10 +7,6 @@ query 50102 "Rekap. Sales Cumul. Amt./Bulan"
         dataitem(SIL01; "Sales Invoice Line")
         {
             column(Posting_Date; "Posting Date")
-            {
-
-            }
-            column(No_; "No.")
             {
 
             }
