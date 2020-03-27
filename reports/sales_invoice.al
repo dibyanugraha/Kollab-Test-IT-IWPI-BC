@@ -4,7 +4,7 @@ report 50112 "sales_invoice"
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     DefaultLayout = RDLC;
-    WordLayout = '.\reports\sales_invoice.rep50112.rdl';
+    rdlcLayout = '.\reports\sales_invoice.rep50112.rdl';
 
     dataset
     {
